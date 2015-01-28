@@ -3,7 +3,7 @@ MAINTAINER Kamil Domański <kamil@domanski.co>
 
 EXPOSE 8161 61616
 
-ENV AMQ_VERSION 5.10.0
+ENV AMQ_VERSION 5.10.1
 
 RUN useradd activemq && \
     mkdir /opt/apache-activemq-${AMQ_VERSION}/ && \
