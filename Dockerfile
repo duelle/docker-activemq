@@ -1,7 +1,7 @@
 FROM dockerfile/java:openjdk-7-jre
 MAINTAINER Kamil Domański <kamil@domanski.co>
 
-EXPOSE 8161 61616
+EXPOSE 1883 5672 8161 61613 61614 61616
 
 ENV AMQ_VERSION 5.10.1
 
