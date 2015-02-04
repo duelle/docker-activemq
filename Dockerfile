@@ -6,12 +6,14 @@ EXPOSE 1883 5672 8161 61613 61614 61616
 ENV AMQ_VERSION 5.10.1
 
 RUN useradd activemq && \
-    mkdir /opt/apache-activemq-${AMQ_VERSION}/ && \
-    chown activemq /opt/apache-activemq-${AMQ_VERSION}/
+    mkdir /opt/apache-activemq-${AMQ_VERSION}/data/kahadb -p && \
+    wget -O - ftp://ftp.mirrorservice.org/sites/ftp.apache.org/activemq/${AMQ_VERSION}/apache-activemq-${AMQ_VERSION}-bin.tar.gz \
+    | tar zxf - -C /opt/ && \
+    mv /opt/apache-activemq-${AMQ_VERSION}/ /opt/apache-activemq/ && \
+    chown activemq -R /opt/apache-activemq
+
+VOLUME /opt/apache-activemq/data/kahadb
 
 USER activemq
 
-RUN wget -O - ftp://ftp.mirrorservice.org/sites/ftp.apache.org/activemq/${AMQ_VERSION}/apache-activemq-${AMQ_VERSION}-bin.tar.gz \
-    | tar zxf - -C /opt/
-
-ENTRYPOINT ["/bin/sh", "-c", "/opt/apache-activemq-${AMQ_VERSION}/bin/activemq console"]
+ENTRYPOINT ["/bin/sh", "-c", "/opt/apache-activemq/bin/activemq console"]
