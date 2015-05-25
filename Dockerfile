@@ -3,7 +3,7 @@ MAINTAINER Kamil Domański <kamil@domanski.co>
 
 EXPOSE 1883 5672 8161 61613 61614 61616
 
-ENV AMQ_VERSION 5.10.1
+ENV AMQ_VERSION 5.11.1
 
 RUN useradd activemq && \
     mkdir /opt/apache-activemq-${AMQ_VERSION}/data/kahadb -p && \
