@@ -1,4 +1,4 @@
-FROM dockerfile/java:openjdk-7-jre
+FROM java:openjdk-7-jre
 MAINTAINER Kamil Domański <kamil@domanski.co>
 
 EXPOSE 1883 5672 8161 61613 61614 61616
