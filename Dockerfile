@@ -12,8 +12,7 @@ RUN useradd activemq && \
     mv /opt/apache-activemq-${AMQ_VERSION}/ /opt/apache-activemq/ && \
     chown activemq -R /opt/apache-activemq
 
-RUN echo >>/opt/apache-activemq/bin/env
-RUN echo 'org.apache.activemq.SERIALIZABLE_PACKAGES="*"' >>/opt/apache-activemq/bin/env
+RUN echo -e "\norg.apache.activemq.SERIALIZABLE_PACKAGES=\"*\"" >>/opt/apache-activemq/bin/env
 
 VOLUME /opt/apache-activemq/data/kahadb
 
