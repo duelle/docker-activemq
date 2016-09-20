@@ -16,4 +16,6 @@ VOLUME /opt/apache-activemq/data/kahadb
 
 USER activemq
 
+echo -e "\nACTIVEMQ_OPTS="$ACTIVEMQ_OPTS -Dorg.apache.activemq.SERIALIZABLE_PACKAGES=\"*\"" >>/opt/apache-activemq/bin/env
+
 ENTRYPOINT ["/bin/sh", "-c", "/opt/apache-activemq/bin/activemq console"]
