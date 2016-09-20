@@ -7,7 +7,7 @@ ENV AMQ_VERSION 5.12.0
 
 RUN useradd activemq && \
     mkdir /opt/apache-activemq-${AMQ_VERSION}/data/kahadb -p && \
-    wget -O - ftp://ftp.mirrorservice.org/sites/ftp.apache.org/activemq/${AMQ_VERSION}/apache-activemq-${AMQ_VERSION}-bin.tar.gz \
+    wget -O - https://archive.apache.org/dist/activemq/${AMQ_VERSION}/apache-activemq-${AMQ_VERSION}-bin.tar.gz  \
     | tar zxf - -C /opt/ && \
     mv /opt/apache-activemq-${AMQ_VERSION}/ /opt/apache-activemq/ && \
     chown activemq -R /opt/apache-activemq
