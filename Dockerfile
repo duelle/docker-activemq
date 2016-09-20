@@ -21,4 +21,4 @@ VOLUME /opt/apache-activemq/data/kahadb
 
 USER activemq
 
-#ENTRYPOINT ["/bin/sh", "-c", "/opt/apache-activemq/bin/activemq console"]
+ENTRYPOINT ["/bin/sh", "-c", "/opt/apache-activemq/bin/activemq console"]
