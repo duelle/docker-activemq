@@ -3,7 +3,7 @@ FROM java:openjdk-8-jre
 
 EXPOSE 1883 5672 8161 61613 61614 61616
 
-ENV AMQ_VERSION 5.14.0
+ENV AMQ_VERSION 5.12.0
 
 RUN useradd activemq && \
     mkdir /opt/apache-activemq-${AMQ_VERSION}/data/kahadb -p && \
