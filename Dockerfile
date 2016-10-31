@@ -3,7 +3,7 @@ FROM java:openjdk-8-jre
 
 EXPOSE 1883 5672 8161 61613 61614 61616
 
-ENV AMQ_VERSION 5.10.0
+ENV AMQ_VERSION 5.14.1
 
 ADD env.add /
 
@@ -16,6 +16,8 @@ RUN useradd activemq && \
 
 RUN echo '' >>/opt/apache-activemq/bin/env
 RUN cat /env.add >>/opt/apache-activemq/bin/env
+
+#ENV ACTIVEMQ_STATIC_QUEUES=kieker
 
 VOLUME /opt/apache-activemq/data/kahadb
 
